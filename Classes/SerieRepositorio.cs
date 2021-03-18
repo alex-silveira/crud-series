@@ -7,11 +7,10 @@ namespace DIO.Series
 {
     public class SerieRepositorio : IRepositorio<Serie>
     {
+        Conexao conn = new Conexao();
         private List<Serie> listaSerie = new List<Serie>();
         public void Atualiza(int id, Genero genero, string titulo, int ano, string descricao)
         {
-            Conexao conn = new Conexao();
-			
 			using (var connection = conn.DbCon())
 			{
 				var command = connection.CreateCommand();
@@ -41,8 +40,6 @@ namespace DIO.Series
 
         public void Exclui(int id)
         {
-            Conexao conn = new Conexao();
-			
 			using (var connection = conn.DbCon())
 			{
 				var command = connection.CreateCommand();
@@ -64,8 +61,6 @@ namespace DIO.Series
 
         public void Insere(Genero genero, string titulo, int ano, string descricao, bool excluido)
         {
-            Conexao conn = new Conexao();
-			
 			using (var connection = conn.DbCon())
 			{
 				var command = connection.CreateCommand();
@@ -100,8 +95,6 @@ namespace DIO.Series
         {
             Console.WriteLine("Listar séries");
 
-            Conexao conn = new Conexao();
-			
 			using (var connection = conn.DbCon())
 			{
 				var command = connection.CreateCommand();
@@ -146,9 +139,7 @@ namespace DIO.Series
         public void RetornaPorId(int id)
         {
             Console.WriteLine("Listar séries");
-
-            Conexao conn = new Conexao();
-			
+            
 			using (var connection = conn.DbCon())
 			{
 				var command = connection.CreateCommand();
