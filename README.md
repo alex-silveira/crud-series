@@ -1,9 +1,9 @@
 # Crud Series
 
-Usage
+## Usage
 ============
 
-## Install SQLite
+### Install SQLite
 ```
 Nuget
 > Command: dotnet add package System.Data.SQLite --version 1.0.113.7
